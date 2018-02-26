@@ -1,0 +1,87 @@
+= Changelog
+Sebastian Daschner
+
+// new versions are placed on the top
+
+== v0.14
+- Fixed test related execution phase
+
+== v0.13
+- Improved class loading functionality while analyzing
+- Support empty domain (https://github.com/sdaschner/jaxrs-analyzer/issues/42[#42^])
+- Output dir is now editable in maven plugin (https://github.com/sdaschner/jaxrs-analyzer-maven-plugin/issues/13[#13^])
+- Ignore properties in representations via Jackson annotations (https://github.com/sdaschner/jaxrs-analyzer/issues/87[#87^])
+
+== v0.12
+- Fixed JavaDoc related class loading
+
+== v0.11
+- Added JavaDoc analysis for JAX-RS resources
+- Added backend SPI
+- Improved path parameter resolution for extended path regexes
+- Fixed local variable analysis for corner cases
+
+== v0.10
+- Changed internals to ASM
+- Improved type analysis
+- Improved analysis of POJO type inheritance
+- Supported Swagger tags
+- Added option to change Swagger schemes
+- Supported `@DefaultValue`
+- Improved entity body support for "`Stringifiable`" types
+- Changed Swagger output to pretty printed JSON
+
+== v0.9
+- Enhanced type resolution for generic types and generic methods
+- Improved Swagger type output
+- Added actual type names to Swagger output
+- Sorted Swagger JSON
+
+== v0.8
+- Improved type resolution for type arguments
+- Fixed errors in swagger specification
+- Fixed Maven plugin error on missing Java EE 7 dependency
+
+== v0.7
+- Restructured Java type representation
+- Improved type resolution for nested JSR-353 calls
+- Improved type analysis for nested & recursive types & methods
+- Improved method resolution on inherited types
+- Fixed CLI calls with relative paths
+
+== v0.6
+- Fixed class loading issue on Windows systems
+- Fixed potential error on invoke interface in nested methods
+- Added type workaround for Map request / response body types
+- Fixed potential error when using `Stream#collect`
+
+== v0.5
+- Improved handling of abstract JAX-RS methods
+- Added more functionality to the CLI tool (e.g. ability to specify several class paths)
+- Changed CLI tool interface to convenient Unix-style parameters
+- Added more log information -- especially on debug level
+
+== v0.4
+- Added AsciiDoc backend
+- Improved variable type resolution
+- Added WebApplicationException handling (thrown WAE's in the code are recognized for the result)
+- Improved `void` method analysis
+- Added project information (name, version, etc.) to backends
+
+== v0.3
+- Improved POJO getter analysis for return types (e.g. isXY() -> boolean, etc.)
+- Added JDK 1.8 Streams as known methods (analysis will notice and simulate these)
+- Improved JAXB analysis of POJOs (all `XmlAccessorType's`, `XmlElement` and `XmlTransient` supported)
+
+== v0.2
+- Minor updated needed for Sonatype release
+
+== v0.1
+- JAX-RS 2.0 annotations analysis
+- `Response` return types analysis (determines where the returned objects ``come from'', follows method invocations, actual arguments, etc.)
+- JSON-P API analysis (e.g. methods with return type `JsonObject` or JSON-P contained in `Response#entity()`)
+- Analysis of POJO responses
+- JAXB analysis of POJOs (only `XmlAccessorType#PUBLIC_MEMBER`)
+- JDK 1.8 lambdas analysis
+- Swagger API JSON backend format
+- Plain text backend format

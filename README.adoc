@@ -1,0 +1,31 @@
+= JAX-RS Analyzer
+Sebastian Daschner
+
+Generates an overview of all JAX-RS resources in a project by bytecode analysis.
+
+*Yet another such JAX-RS tool?* +
+Yes, but this gathers the information about the JAX-RS resource classes by bytecode analysis (not just by reflection).
+This gains more information in several situations. You don't need additional annotations on your JAX-RS resource methods.
+Using the JSR 339 standard is sufficient.
+
+Java 8 is needed for the Analyzer.
+
+For usage see the https://github.com/sdaschner/jaxrs-analyzer/blob/master/Documentation.adoc[documentation].
+
+== Maven Plugin
+The Analyzer can be added to your project via https://github.com/sdaschner/jaxrs-analyzer-maven-plugin[Maven plugin].
+
+== Gradle Plugin
+For `Gradle` based projects - third-party https://github.com/eshepelyuk/gradle-jaxrs-analyzer-plugin[Gradle plugin] could be used.
+
+== Standalone
+Instead of using the Maven plugin, the tool can also run directly from the jar file.
+You can download the latest version https://github.com/sdaschner/jaxrs-analyzer/releases[here].
+
+== Backends
+The Analyzer supports Plaintext, AsciiDoc and Swagger as output format.
+
+== Documentation / Feature list
++...+ can be found https://github.com/sdaschner/jaxrs-analyzer/blob/master/Documentation.adoc[here].
+
+Feedback, bug reports and ideas for improvement are very welcome! Feel free to fork, comment, file an issue, etc. ;-)
